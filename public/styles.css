@@ -1,0 +1,232 @@
+html, body, #main {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 0;
+    background: #c5e1a5;
+}
+
+#main::before {
+    content: "";
+    background: #8bc34a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 5000px;
+    width: 5000px;
+    transform-origin: 50% 0%;
+    animation: anim1 61s ease-in-out infinite;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: -1;
+}
+@keyframes anim1 {
+    0% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(108deg);
+    }
+    50% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(168deg);
+    }
+    100% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(108deg);
+    }
+}
+#main::after {
+    content: "";
+    background: #558b2f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 5000px;
+    width: 5000px;
+    transform-origin: 50% 0%;
+    animation: anim2 89s ease-in-out infinite;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: -1;
+}
+@keyframes anim2 {
+    0% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(198deg);
+    }
+    50% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(258deg);
+    }
+    100% {
+        transform: translateX(-2500px) translateY(-10vh) rotate(198deg);
+    }
+}
+
+#scroll {
+    max-height: 100%;
+    overflow: auto;
+}
+
+#app {
+    margin-top: 30px;
+    height: calc(100vh - 50px);
+}
+
+#banner {
+    background: url(./banner.bg.png);
+    background-size: 10%;
+    height: 80px;
+}
+
+#action {
+    display: flex;
+}
+
+#input {
+    flex: 1;
+    flex-direction: row-reverse;
+    margin-right: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    position: relative;
+    flex-grow: 1;
+}
+
+#response {
+    position: absolute;
+    top: 24px;
+    right: 0px;
+    bottom: 24px;
+    left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#okr>div>div>ul {
+    margin: 20px 20px 15px 0px;
+}
+
+#okr>div>div>ul>li {
+    display: flex;
+}
+
+#okr>div>div>ul>li>input {
+    flex: 1;
+    flex-direction: row-reverse;
+    margin-right: 15px;
+}
+
+#okr>div>div>ul>ul>li {
+    display: flex;
+}
+
+#okr>div>div>ul>ul>li>input {
+    flex: 1;
+    flex-direction: row-reverse;
+    margin-right: 15px;
+}
+
+/*
+https://leaverou.github.io/bubbly/
+*/
+.speech-bubble-l, .speech-bubble-r {
+	position: relative;
+	border-radius: .4em;
+        padding: 10px;
+        max-width: 75%;
+        min-width: 10%;
+        display: block;
+        clear: both;
+}
+
+.speech-bubble-l {
+	background: #e3f2fd;
+        margin: 10px auto auto 34px;
+        float: left;
+}
+.speech-bubble-l:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #e3f2fd;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.speech-bubble-r {
+	background: #f9fbe7;
+        float: right;
+        margin: 10px 34px;
+}
+
+.speech-bubble-r:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #f9fbe7;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
+/*
+https://www.pexels.com/blog/css-only-loaders/
+*/
+.loader {
+  position: relative;
+  width: 100%;
+  height: 0px;
+  background-color: #fdba2c;
+}
+
+.loader-bar {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  text-align: center;
+}
+
+.loader-bar:nth-child(1) {
+  background-color: #da4733;
+  animation: loading 3s linear infinite;
+}
+
+.loader-bar:nth-child(2) {
+  background-color: #3b78e7;
+  animation: loading 3s linear 1s infinite;
+}
+
+.loader-bar:nth-child(3) {
+  background-color: #fdba2c;
+  animation: loading 3s linear 2s infinite;
+}
+
+@keyframes loading {
+    from {left: 50%; width: 0;z-index:100;}
+    33.3333% {left: 0; width: 100%;z-index: 10;}
+    to {left: 0; width: 100%;}
+}
+
+.loader.loader-loading {
+    height: 3px;
+}
+
+#okr {
+    display: none;
+}

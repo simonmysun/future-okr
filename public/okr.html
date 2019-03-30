@@ -1,0 +1,42 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="okr">
+      <ul>
+        <li>  
+          <input
+            v-model.trim="newObjectiveTitle"
+            @keyup.enter="addObjective"
+            placeholder="Add new objective"
+            >
+        </li>
+        <li v-for="objective in objectives">
+          <input
+            :value="objective.title"
+            @input="updateObjectiveTitle(objective, $event.target.value)"
+            >
+          <button @click="removeObjective(objective)">X</button>
+          <ul>
+            <input
+              v-model.trim="objective.newKeyResultContent"
+              @keyup.enter="addKeyResult(objective)"
+              placeholder="Add new key result"
+              >
+            <li v-for="keyResult in objective.keyResults">
+              <input
+                :value="keyResult.content"
+                @input="updateKeyResultContent(objective, keyResult, $event.target.value)"
+                >
+              <button @click="removeKeyResult(objective, keyResult)">X</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript" src="https://unpkg.com/vuefire"></script>
+    <script type="text/javascript" src="./okr.js"></script>
+  </body>
+</html>

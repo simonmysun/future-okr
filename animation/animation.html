@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script src="./lib/chat-ui.js"></script>
+    <link href="./lib/chat-ui.css" rel="stylesheet" media="all" />
+    <style>
+      .l1 {
+      box-shadow: 0 5px 19px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+      border-radius: 2px;
+      }
+      .l2 {
+      box-shadow: 0 5px 19px rgba(0,0,0,0.30), 0 3px 6px rgba(0,0,0,0.22);
+      border-radius: 2px;
+      }
+      .talk {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      max-width: 130px;
+      max-height: 50px;
+      padding: 2px 5px;
+      font-size: 75%;
+      z-index: 9999;
+      }
+      .talk::after {
+      content: url(./assets/voice.svg);
+      width: 12px; 
+      height: 9px;
+      }
+      .talkend {
+      overflow: hidden;
+      }
+      .talkend::after {
+      opacity: 0;
+      }
+      pre {
+      white-space: pre-wrap;
+      }
+      #chat-ui-mainframe {
+      position: relative;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 50%;
+      }
+      #chat {
+      overflow:hidden;
+      }
+      #chat-ui-header .chat-ui-header__image {
+      width: 30px;
+      height: 30px;
+      }
+      #chat-ui-header .chat-ui-header__cell_image {
+      width: 50px;
+      }
+      #chat-ui-dialog .chat-ui-dialog-bubble_user {
+      margin: 3px 10px 0;
+      width: 60%;
+      }
+      #chat-ui-dialog .chat-ui-dialog-bubble_chat {
+      margin: 3px 3px 0;
+      width: 60%;
+      }
+      #chat-ui-header {
+      height: 35px;
+      }
+      #chat-ui-mainframe .chat-ui-dialog-container {
+      top: 40px;
+      bottom: 55px;
+      }
+      #chat-ui-mainframe .chat-ui-input-container {
+      display: none;
+      }
+      #chat-ui-mainframe .chat-ui-dialog-container {
+      bottom: 0;
+      }
+    </style>
+  </head>
+  <body style="position: relative">
+    <div style="width: 150px; height: 200px; float: left;" id="chat">
+      <div></div>
+    </div>
+    <div style="width: 450px; height: 200px; float: left; position: relative;">
+      <div style="position: relative;" id="g">
+        <div style="width: 45px; height: 45px; border-radius: 50%; background: #c5e1a5; border: 5px solid #aed581; position: absolute; top: 10px; left: 45px;" class="l1">
+          <img src="./avatars/avatar-5.png" style="width: 45px;">
+        </div>
+        <div style="width: 45px; height: 45px; border-radius: 50%; background: #ffecb3; border: 5px solid #ffe082; position: absolute; top: 70px; left: 15px;" class="l1">
+          <img src="./avatars/avatar-7.png" style="width: 45px;">
+        </div>
+        <div style="width: 45px; height: 45px; border-radius: 50%; background: #90caf9; border: 5px solid #64b5f6; position: absolute; top: 130px; left: 45px;" class="l1">
+          <img src="./avatars/avatar-1.png" style="width: 45px;">
+        </div>
+      </div>
+      <div style="position: absolute; top: 85px; left: 240px; width: 60px; height: 18px; background: #03a9f4; font-size: 15px; text-align: center; border: 5px solid #03a9f4; color: white; font-family: sans; " class="l1">Future</div>
+      <div style="position: absolute; top: 85px; left: 380px; width: 20px; height: 20px; border-radius: 50%; background: #c8e6c9; padding: 5px;" class="l1">
+        <img src="./assets/database.png" style="width: 20px;">
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/ani.js"></script>
+    <script src="./scripts/ani2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>image viewer</title>
+<link href="../imageviewer.css"  rel="stylesheet" type="text/css" />
+<script src="lib/jquery-1.11.3.min.js"></script> 
+<script src="../imageviewer.js"></script>
+
+<style>
+    .pannable-image {
+      width: 100%;
+    }
+</style>
+</head>
+
+<body>
+<div id="image-gallery" class="cf">
+    <img src="lc.png" data-high-res-src="lc.png" alt="" class="pannable-image">
+</div>
+<script type="text/javascript">
+
+    //Example 3
+    $(function () {
+        $('.pannable-image').ImageViewer();
+    });
+</script>
+
+ </body>
+</html>
